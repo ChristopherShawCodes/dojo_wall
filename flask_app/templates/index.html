@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<title>Title</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS v5.2.0-beta1 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/style.css') }}">
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+</head>
+
+<body>
+<main>
+    <!-- Background & animion & navbar & title -->
+    <div class="container-fluid">
+        <!-- Background animtion-->
+        <div class="background">
+            <div class="cube"></div>
+            <div class="cube"></div>
+            <div class="cube"></div>
+            <div class="cube"></div>
+            <div class="cube"></div>
+            <!-- header -->
+            <header>
+                <!-- logo -->
+                <div class="logo"><span>Coding Dojo Wall</span></div>
+                <!-- title & content -->
+                <div class="container">
+                    <div class="col-6" id="register">
+                        <form action="/register" method="post" class="bg-dark text-primary" id="register_form">
+                            <h1 class="text-primary">Register</h1>
+                            <!-- category filter used to filter by register and again by login -->
+                            {% with messages = get_flashed_messages(category_filter=['register']) %}
+                            {% if messages %}
+                            <div class="alert alert-dark text-dark" role="alert" id="alert">
+                                <strong>Flash Message</strong>
+                                {% for message in messages %}
+                                <p>{{message}}</p>
+                                {% endfor %}
+                            </div>
+                                {% endif %}
+                                {% endwith %}
+                            <div class="mb-3">
+                                <label for="first_name" class="form-label">First Name:</label>
+                                <input type="text" class="form-control" id="register_input" name="first_name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="last_name" class="form-label">Last Name:</label>
+                                <input type="text" class="form-control" id="register_input" name="last_name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address:</label>
+                                <input type="email" class="form-control" id="register_input" aria-describedby="emailHelp" name="email">
+                            </div>
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password:</label>
+                                <input type="password" class="form-control" id="register_input" name="password">
+                            </div>
+                            <div class="mb-3">
+                                <label for="confirm" class="form-label">Confirm Password:</label>
+                                <input type="password" class="form-control" id="register_input" name="confirm">
+                                <div id="passwordHelp" class="form-text">Your password is hidden for your privacy.</div>
+                            </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                    <div class="col-6" id="login">
+                        <form action="/login" method="post" class="bg-dark text-warning" id="login_form">
+                            <h1 class="text-warning">Login</h1>
+                            {% with messages = get_flashed_messages(category_filter=['login']) %}
+                            {% if messages %}
+                            <div class="alert alert-dark text-dark" role="alert" id="alert">
+                                <strong>Flash Message</strong>
+                                {% for message in messages %}
+                                <p>{{message}}</p>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                            {% endwith %}
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address:</label>
+                                <input type="email" class="form-control" id="login_input" aria-describedby="emailHelp" name="email">
+                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password:</label>
+                                <input type="password" class="form-control" id="login_input" name="password">
+                                <div id="passwordHelp" class="form-text">Your password is hidden for your privacy.</div>
+                            </div>
+                                <button type="submit" class="btn btn-warning">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </header>
+        </div>
+    </div>
+</main>
+<!-- Bootstrap JavaScript Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+    integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
+</script>
+</body>
+
+</html>

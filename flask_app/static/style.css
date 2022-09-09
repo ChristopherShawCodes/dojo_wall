@@ -1,0 +1,308 @@
+/* styling for all pages */
+
+body {
+	font-family: 'Josefin Sans', sans-serif;
+	box-sizing: border-box;
+}
+.container-fluid{
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.fluid-container{
+	height: 30vh;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	background-color: #212335;
+}
+  /* ============= Animation background ========= */
+.background {
+	background: linear-gradient(132deg, #FC415A, #591BC5, #212335);
+	background-size: 400% 400%;
+	animation: Gradient 15s ease infinite;
+	height: 100vh;
+	width: 100%;
+	padding:0;
+	margin:0px;
+}
+
+.background_1 {
+	background: linear-gradient(132deg, #FC415A, #591BC5, #212335);
+	background-size: 400% 400%;
+	animation: Gradient 15s ease infinite;
+	height: 200vh;
+	width: 100%;
+	padding:0;
+	margin:0px;
+}
+
+.cube {
+	position: absolute;
+	top: 80vh;
+	left: 45vw;
+	width: 10px;
+	height: 10px;
+	border: solid 1px #D7D4E4;
+	transform-origin: top left;
+	transform: scale(0) rotate(0deg) translate(-50%, -50%);
+	animation: cube 12s ease-in forwards infinite;
+}
+.cube:nth-child(2n) {
+	border-color: #FFF ;
+}
+.cube:nth-child(2) {
+	animation-delay: 2s;
+	left: 25vw;
+	top: 40vh;
+}
+.cube:nth-child(3) {
+	animation-delay: 4s;
+	left: 75vw;
+	top: 50vh;
+}
+.cube:nth-child(4) {
+	animation-delay: 6s;
+	left: 90vw;
+	top: 10vh;
+}
+.cube:nth-child(5) {
+	animation-delay: 8s;
+	left: 10vw;
+	top: 85vh;
+}
+.cube:nth-child(6) {
+	animation-delay: 10s;
+	left: 50vw;
+	top: 10vh;
+}
+  /* ================= Header ============ */
+header{
+	position: fixed;
+	top:0%;
+	left: 0%;
+	right: 0%;
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+}
+
+  /* navbar */
+nav{
+	color: #FFF;
+	float: right;
+	margin:30px 90px;
+}
+nav ul{
+	list-style: none;
+}
+nav ul li {
+	float: left;
+	transition: .3s;
+}
+nav ul li a{
+	text-decoration: none;
+	color: #EFEEF5;
+	transition: .1;
+	font-size: 20px;
+	margin-left:16px;
+}
+
+nav ul li:hover a{
+	font-size: 24px;
+	color: white;
+	padding: 3px;
+	border: 1px solid purple;
+}
+
+nav ul li:hover{
+	height: 30px;
+	padding-top: 30px;
+	margin-top: -20px;
+	background: #EFEEF5;
+	transform: skew(15deg);
+	border: 1px solid pink;
+}
+  /* Logo */
+.logo{
+	width: 27px;
+	height: 35px;
+	background: #6357a4;
+	opacity: 70%;
+	margin: 40px 63px;
+	float: left;
+	transform: rotate(-30deg);
+}
+
+.logo span{
+	color: white;
+	font-size: 2em;
+	line-height: 1.4;
+	font-weight: bold;
+	border: 1px solid white;
+}
+/* Header content & title & button*/
+.header-content{
+	margin-top:25%;
+	text-align: center;
+	color:  #EFEEF5;
+}
+.header-content h1{
+	text-transform: uppercase;
+	font-size: 3em;
+	letter-spacing: 1px;
+}
+.header-content p {
+	font-size: 20px;
+	line-height: 1.5;
+	margin: 20px auto;
+}
+.header-content button{
+	width: 140px;
+	margin:20px 10px;
+	color: #591BC5;
+	font-size: 17px;
+	border:1px solid #EFEEF5;
+	font-weight: 500;
+	background: #EFEEF5;
+	border-radius: 20px;
+	padding: 10px;
+	cursor:pointer;
+	transition: .3s;
+}
+.header-content button:hover{
+	border-radius: 0;
+}
+/* Animate Background*/
+@keyframes Gradient {
+	0% {
+	background-position: 0% 50%;
+	}
+	50% {
+	background-position: 100% 50%;
+	}
+	100% {
+	background-position: 0% 50%;
+	}
+}
+@keyframes cube {
+	from {
+	transform: scale(0) rotate(0deg) translate(-50%, -50%);
+	opacity: 1;
+	}
+	to {
+	transform: scale(20) rotate(960deg) translate(-50%, -50%);
+	opacity: 0;
+	}
+}
+
+
+/* ------------------------------------------------------------------------------------- */
+/* styling for ('/') page */
+
+.container{
+	display: flex;
+	margin-top: 10%;
+	justify-content: space-evenly;
+}
+
+#register,#login{
+	width: 40%;
+}
+
+#register_input,#login_input{
+    width: 80%;
+}
+
+#register_form,#login_form,#dashboard{
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#logout{
+	margin-left: 35%;
+}
+
+/* styling for flash messages  */
+#alert{
+	width: 80%;
+	height: 180px;
+	padding: 5px;
+}
+/* -------------------------------------------------------------------------------------- */
+
+/* styling for dashboard page  */
+/* top */
+.head{
+	position: right;
+}
+
+#nav{
+	float: right;
+}
+
+.page_content_top{
+	display: flex;
+
+}
+
+.post_container{
+	margin-top: 15%;
+	background-color: whitesmoke;
+	width: 70%;
+	opacity: 80%;
+	border-radius: 10px;
+	margin-left: 30%;
+}
+
+#publish_post{
+	width: 70%;
+	margin: 0 auto;
+	border-radius: 10px;
+	background-color:#212335;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+#title{
+	color: white;
+	text-align: center;
+	padding: 10px;
+}
+
+#text_area{
+	width: 90%;
+	margin: 0 auto;
+}
+
+#submit{
+	background-color: #591BC5;
+	color: white;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 10px;
+	border-radius: 10px;
+	margin-left: 40%;
+}
+
+#post_alert{
+	width: 70%;
+	margin: 0 auto;
+}
+
+/* ---------------------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------------------------------- */
+	/* bottom */
+
+.page_content_bottom{
+	width: 70%;
+	margin: 0 auto;
+}
+
+#table{
+	height: auto;
+	margin-bottom: 50px;
+}
